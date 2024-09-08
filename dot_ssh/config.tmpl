@@ -1,0 +1,37 @@
+# Cloud
+Host server3
+  Hostname %h.{{ .domain_cloud }}
+  User root
+
+# Home
+Host dockerhost dockerhost2 opnsense
+  HostName %h.{{ .domain_home }}
+  User christian
+Host nas
+  HostName %h.{{ .domain_home }}
+  User christian_admin
+Host pikvm pve2 tpi2 truenas
+  HostName %h.{{ .domain_home }}
+  User root
+
+# Home - UniFi
+Host uni_ap
+  Hostname U6-Pro.{{- .domain_home }}
+Host uni_switch
+  Hostname USW-Lite-16-PoE.{{ .domain_home }}
+Host uni_*
+  User uni_admin
+
+# Local
+Host localhost
+  HostName localhost
+  UserKnownHostsFile=/dev/null
+
+# All
+Host *
+    ConnectTimeout 30
+    ForwardAgent no
+    HashKnownHosts yes
+    ServerAliveCountMax 3
+    ServerAliveInterval 5
+    StrictHostKeyChecking no
