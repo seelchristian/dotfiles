@@ -1,0 +1,8 @@
+.editorconfig
+.gitignore
+LICENSE.md
+README.md
+
+{{- if ne .chezmoi.os "windows" }}
+.wslconfig
+{{- end }}
