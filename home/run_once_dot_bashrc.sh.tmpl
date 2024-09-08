@@ -1,5 +1,5 @@
-#!/usr/bin/env sh
-cat <<EOF >> ~/.bashrc
+#!{{ lookPath "bash" }}
+tee -a <<EOF ~/.bashrc >/dev/null
 
 # Bash History tweaking
 export HISTCONTROL=ignoreboth
