@@ -43,7 +43,9 @@
     {{- end }}
 
 [http]
+    {{- if eq .chezmoi.os "windows" }}
     sslBackend = schannel
+    {{- end }}
 
 [init]
     defaultBranch = main
