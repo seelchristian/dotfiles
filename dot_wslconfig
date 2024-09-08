@@ -1,0 +1,5 @@
+[network]
+#generateResolvConf = false
+
+[wsl2]
+kernelCommandLine = "sysctl.net.core.rmem_max=2500000"
