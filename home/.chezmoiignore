@@ -1,10 +1,11 @@
-LICENSE.md
-README.md
-
+# Windows only
 {{- if ne .chezmoi.os "windows" }}
 .wslconfig
 AppData
 {{- end }}
+
+# Linux only
 {{- if ne .chezmoi.os "linux" }}
+.bash*
 .gnupg
 {{- end }}
