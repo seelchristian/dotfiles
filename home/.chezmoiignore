@@ -9,3 +9,6 @@ AppData
 .bash*
 .gnupg
 {{- end }}
+
+# Disabled
+.ssh/id_rsa*
