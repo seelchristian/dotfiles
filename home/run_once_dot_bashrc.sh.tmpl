@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+cat <<EOF >> ~/.bashrc
+
+# Bash History tweaking
+export HISTCONTROL=ignoreboth
+export HISTFILESIZE="-1"
+export HISTSIZE="$HISTFILESIZE"
+export HISTTIMEFORMAT="[%F %T] "
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMT_COMMAND"
+
+# Bash Completion
+complete -C /usr/bin/terraform terraform
+source <(kubectl completion bash)
+source <(talhelper completion bash)
+source <(talosctl completion bash)
+
+EOF
