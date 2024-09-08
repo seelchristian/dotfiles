@@ -1,0 +1,11 @@
+{{- $domain_cloud := promptStringOnce . "domain_cloud" "Domain - Cloud" -}}
+{{- $domain_home := promptStringOnce . "domain_home" "Domain - Home" -}}
+{{- $username := promptStringOnce . "username" "Username" -}}
+
+[data]
+    domain_cloud = {{ $domain_cloud | quote }}
+    domain_home = {{ $domain_home | quote }}
+    username = {{ $username | quote }}
+[edit]
+    command = "code"
+    args = ["--wait"]
