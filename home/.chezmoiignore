@@ -8,6 +8,14 @@ AppData
 {{- if ne .chezmoi.os "linux" }}
 .bash*
 .gnupg
+etc_wslconf.sh
+{{- end }}
+
+# WSL only
+{{- if eq .chezmoi.os "linux" }}
+{{-   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
+!etc_wslconf.sh
+{{-   end }}
 {{- end }}
 
 # Disabled

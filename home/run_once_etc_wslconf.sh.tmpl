@@ -1,0 +1,13 @@
+chezmoi:template:line-ending=native
+#!{{ lookPath "bash" }}
+sudo tee <<EOF /etc/wsl.conf >/dev/null
+[automount]
+enabled = true
+mountFsTab = false
+root = /mnt/
+options = "metadata,uid={{ chezmoi.uid }},gid={{ chezmoi.gid }},umask=022"
+
+[boot]
+systemd=true
+
+EOF
