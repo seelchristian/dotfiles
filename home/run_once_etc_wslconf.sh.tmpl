@@ -5,7 +5,7 @@ sudo tee <<EOF /etc/wsl.conf >/dev/null
 enabled = true
 mountFsTab = false
 root = /mnt/
-options = "metadata,uid={{ chezmoi.uid }},gid={{ chezmoi.gid }},umask=022"
+options = "metadata,uid={{ .chezmoi.uid }},gid={{ .chezmoi.gid }},umask=022"
 
 [boot]
 systemd=true
